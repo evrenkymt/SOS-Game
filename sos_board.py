@@ -25,6 +25,22 @@ class SOS_BOARD:
         else:
             return True
     
+    def is_full(self):
+        for i in range(self.row):
+            for j in range(self.col):
+                if self.board[i][j] == ' ':
+                    return False
+        return True
+    
+    def get_available_moves(self):
+        available_moves = []
+        for i in range(self.row):
+            for j in range(self.col):
+                if self.board[i][j] == ' ':
+                    available_moves.append([i, j, 'S'])
+                    available_moves.append([i, j, 'O'])
+        return available_moves
+    
     def check_sos(self, move, player):
         move_row = move[0]
         move_col = move[1]
