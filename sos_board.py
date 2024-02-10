@@ -12,6 +12,12 @@ class SOS_BOARD:
         for _ in self.board:
             print(_)
     
+    def show_status(self, player_1, player_2):
+        self.print_board()
+        player_1.print_score()
+        player_2.print_score()
+        print("\n")        
+    
     def update_board(self, move):
         self.board[move[0]][move[1]] = move[2]
         return self.board

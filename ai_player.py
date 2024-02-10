@@ -50,7 +50,7 @@ class AI_Players(Players):
 
             return min_eval, best_move
 
-    def get_best_move(self, board, depth=4):
+    def get_best_move(self, board, depth):
         _, best_move = self.minimax(board, depth, True, 0, 0)
         return best_move
                 

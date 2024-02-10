@@ -24,14 +24,11 @@ class sos_game_start:
             move = player_turn.get_move()
         board.update_board(move)
         board.check_sos(move, player_turn)
-        
-        player_1.print_score()
-        player_2.print_score()
-        board.print_board()
+
+        board.show_status(player_1, player_2)
         
         if player_turn == player_1:
             player_turn = player_2
         else:
             player_turn = player_1
-        
         i += 1
