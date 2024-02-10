@@ -1,11 +1,10 @@
-from players import Players
-
-class AI_Players(Players):
+class AI_Players:
     def __init__(self, nickname):
-        super().__init__(nickname)
-    
-    def get_move(self):
-        raise NotImplementedError('AI players dont take input from user. They make their own move.')
+        self.nickname = nickname
+        self.score = 0
+
+    def print_score(self):
+        print(f'{self.nickname} has {self.score} points')
     
     def minimax(self, board, depth, is_maximizing, player_one_score, player_two_score):
         # Check if the game is over or the depth limit is reached
@@ -50,7 +49,6 @@ class AI_Players(Players):
 
             return min_eval, best_move
 
-    def get_best_move(self, board, depth):
+    def get_move(self, board, depth):
         _, best_move = self.minimax(board, depth, True, 0, 0)
         return best_move
-                

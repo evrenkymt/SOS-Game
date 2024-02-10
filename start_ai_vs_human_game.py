@@ -23,11 +23,14 @@ class start_game:
         
         current_player = player_list[player_turn_index]
         
-        if player_turn_index == 0:
+        if current_player == player_1:
             move = current_player.get_move()
-        elif player_turn_index == 1:
+        elif current_player == player_2:
             print('AI Player 1 is making a move')
-            move = current_player.get_best_move(board, 2)
+            move = current_player.get_move(board, 2)
+        else:
+            print('Error: Invalid player')
+            break
         
         board.update_board(move)
         board.check_sos(move, current_player)
