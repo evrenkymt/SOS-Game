@@ -17,4 +17,10 @@ class AI_Players(Players):
             best_move = None
             
             for move in board.get_available_moves():
+                # should be a copy of the board
+                new_board = board
+                new_board.update_board(move)
+                
+                eval, _ = self.minimax(new_board, depth - 1, False)
+                
                 
