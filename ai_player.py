@@ -1,4 +1,4 @@
-class AI_Players:
+class AiPlayer:
     def __init__(self, nickname):
         self.nickname = nickname
         self.score = 0
@@ -49,6 +49,8 @@ class AI_Players:
 
             return min_eval, best_move
 
-    def get_move(self, board, depth):
-        _, best_move = self.minimax(board, depth, True, 0, 0)
+    def get_move(self, board, depth, player_one_score, player_two_score):
+        _, best_move = self.minimax(board, depth, True, player_one_score, player_two_score)
         return best_move
+        #move = [1, 0, 'O']
+        #return move

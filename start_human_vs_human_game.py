@@ -1,12 +1,12 @@
 import sos_board
 import players
 
-class sos_game_start:
+class SosGameStart:
     size = input('Welcome to SOS game. Please enter row and column size:')
     row = int(size.split(' ')[0])
     col = int(size.split(' ')[1])
     
-    board = sos_board.SOS_BOARD(row, col)
+    board = sos_board.SosBoard(row, col)
 
     player_1 = players.Players('Player 1')
     player_2 = players.Players('Player 2')
